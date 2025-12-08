@@ -7,7 +7,7 @@ import Skills from '@/components/Skills';
 import Work from '@/components/Work';
 import Contact from '@/components/Contact';
 import Slide from '@/components/Slide';
-import SlideNodes from '@/components/SlideNodes';
+
 import InfiniteMarquee from '@/components/InfiniteMarquee';
 
 export default function Home() {
@@ -37,8 +37,6 @@ export default function Home() {
             <Slide id="contact">
                 <Contact />
             </Slide>
-
-            <SlideNodes />
         </main>
     );
 }

@@ -47,10 +47,10 @@ export default function Navbar() {
                 {/* Logo Area */}
                 <Link href="#hero" onClick={(e) => handleScroll(e, "#hero")} className="group relative z-50">
                     <motion.span
-                        className="text-2xl font-bold font-outfit tracking-tighter"
+                        className="text-lg md:text-2xl font-bold font-outfit tracking-tighter"
                         whileHover={{ scale: 1.05 }}
                     >
-                        Shivam | TechwithShivu<span className="text-accent">.</span>
+                        Shivam<span className="hidden sm:inline"> | TechwithShivu</span><span className="text-accent">.</span>
                     </motion.span>
                 </Link>
 
@@ -117,6 +117,15 @@ export default function Navbar() {
                                 </Link>
                             </motion.div>
                         ))}
+                        <motion.a
+                            href="https://wa.me/918317068532"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.8 }}
+                            className="px-8 py-3 rounded-full bg-white text-black font-bold font-outfit"
+                        >
+                            Let's Talk
+                        </motion.a>
                     </motion.div>
                 )}
             </AnimatePresence>

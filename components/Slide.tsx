@@ -18,7 +18,7 @@ export default function Slide({ children, className = "", id, fullWidth = false 
         <section
             id={id}
             ref={ref}
-            className={`h-screen w-full snap-start snap-always flex flex-col justify-center items-center overflow-hidden relative ${className}`}
+            className={`min-h-screen w-full snap-start snap-always flex flex-col justify-center items-center overflow-hidden relative ${className}`}
         >
             <motion.div
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}

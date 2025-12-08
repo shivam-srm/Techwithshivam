@@ -27,8 +27,8 @@ export default function FloatingOrbs() {
     const orbs = [
         // Original Red/Teal Theme
         {
-            width: 400,
-            height: 400,
+            width: "40vw", // Responsive width
+            height: "40vw",
             color: "rgba(255, 77, 90, 0.15)", // Vivid Red
             top: "10%",
             left: "20%",
@@ -36,8 +36,8 @@ export default function FloatingOrbs() {
             duration: 25,
         },
         {
-            width: 300,
-            height: 300,
+            width: "30vw",
+            height: "30vw",
             color: "rgba(0, 255, 208, 0.15)", // Vivid Teal
             top: "60%",
             left: "70%",
@@ -46,8 +46,8 @@ export default function FloatingOrbs() {
         },
         // New Colors: Violets & Purples
         {
-            width: 500,
-            height: 500,
+            width: "50vw",
+            height: "50vw",
             color: "rgba(120, 40, 255, 0.1)", // Deep Violet
             top: "20%",
             left: "80%",
@@ -55,8 +55,8 @@ export default function FloatingOrbs() {
             duration: 35,
         },
         {
-            width: 250,
-            height: 250,
+            width: "25vw",
+            height: "25vw",
             color: "rgba(255, 0, 128, 0.1)", // Hot Pink/Magenta
             top: "80%",
             left: "15%",
@@ -65,8 +65,8 @@ export default function FloatingOrbs() {
         },
         // Subtle fills
         {
-            width: 600,
-            height: 600,
+            width: "60vw",
+            height: "60vw",
             color: "rgba(0, 255, 208, 0.05)", // Large fainter teal
             top: "-20%",
             left: "-10%",
@@ -74,8 +74,8 @@ export default function FloatingOrbs() {
             duration: 40,
         },
         {
-            width: 350,
-            height: 350,
+            width: "35vw",
+            height: "35vw",
             color: "rgba(100, 100, 255, 0.08)", // Blue-ish
             top: "40%",
             left: "40%",

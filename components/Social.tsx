@@ -23,7 +23,7 @@ export default function Social() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ scale: 1.05 }}
-                            className="bg-white/5 border border-white/10 rounded-lg p-12 transition-colors hover:border-accent-secondary hover:shadow-2xl"
+                            className="bg-white/5 border border-white/10 rounded-lg p-6 md:p-12 transition-colors hover:border-accent-secondary hover:shadow-2xl"
                         >
                             <social.icon className="w-12 h-12 mx-auto mb-6 text-accent-secondary" />
                             <h3 className="text-5xl font-bold text-accent-secondary mb-2">{social.number}</h3>

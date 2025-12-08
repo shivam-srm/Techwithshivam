@@ -50,15 +50,15 @@ function TiltCard({ children, className = "" }: { children: React.ReactNode; cla
 
 export default function About() {
     return (
-        <section id="about" className="h-full min-h-screen py-24 relative overflow-hidden flex items-center">
+        <section id="about" className="min-h-screen pt-32 pb-24 relative overflow-hidden flex flex-col justify-center">
             {/* Background Grid - HUD Effect */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="container mx-auto px-6 relative z-10 w-full">
+                <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center w-full">
 
                     {/* Left Column: 3D Identity Card */}
-                    <div className="perspective-1000 flex justify-center lg:justify-start">
+                    <div className="perspective-1000 flex justify-center lg:justify-start w-full">
                         <TiltCard className="w-full max-w-md bg-gradient-to-br from-[#1a1a1a] to-black border border-white/10 p-1 rounded-2xl group">
                             {/* Glowing Border */}
                             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
@@ -92,20 +92,20 @@ export default function About() {
                                 </div>
 
                                 <div className="space-y-4 font-mono text-sm text-white/60">
-                                    <div className="flex justify-between border-b border-white/10 pb-2">
+                                    <div className="flex justify-between items-start gap-4 border-b border-white/10 pb-2">
                                         <span>Location</span>
-                                        <span className="text-white">Lucknow, Uttar Pradesh</span>
+                                        <span className="text-white text-right">Lucknow, Uttar Pradesh</span>
                                     </div>
-                                    <div className="flex justify-between border-b border-white/10 pb-2">
+                                    <div className="flex justify-between items-start gap-4 border-b border-white/10 pb-2">
                                         <span>Status</span>
                                         <span className="text-green-400 flex items-center gap-2">
                                             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                                             Online
                                         </span>
                                     </div>
-                                    <div className="flex justify-between border-b border-white/10 pb-2">
+                                    <div className="flex justify-between items-start gap-4 border-b border-white/10 pb-2">
                                         <span>Experience</span>
-                                        <span className="text-white">Ready to Deploy 🚀</span>
+                                        <span className="text-white text-right">Ready to Deploy 🚀</span>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ export default function About() {
                                 <span className="w-2 h-2 bg-accent rounded-full animate-ping" />
                                 SYSTEM INITIALIZED
                             </div>
-                            <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-6 leading-tight">
+                            <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold font-heading text-white mb-6 leading-tight">
                                 <span className="opacity-50">Decoding</span> <br />
                                 The <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Future.</span>
                             </h2>

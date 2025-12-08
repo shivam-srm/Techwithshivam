@@ -80,10 +80,10 @@ const StaggeredWord = ({ text, delay = 0 }: { text: string, delay?: number }) =>
 
 export default function AdvancedHero() {
     return (
-        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+        <div className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-center overflow-hidden pt-32 pb-10 md:pt-0 md:pb-0">
             {/* Background Elements */}
-            <div className="absolute top-20 right-[10%] w-96 h-96 bg-purple-600/20 rounded-full blur-[100px]" />
-            <div className="absolute bottom-20 left-[10%] w-96 h-96 bg-blue-600/20 rounded-full blur-[100px]" />
+            <div className="absolute top-20 right-[10%] w-60 h-60 md:w-96 md:h-96 bg-purple-600/20 rounded-full blur-[80px] md:blur-[100px]" />
+            <div className="absolute bottom-20 left-[10%] w-60 h-60 md:w-96 md:h-96 bg-blue-600/20 rounded-full blur-[80px] md:blur-[100px]" />
 
             <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
                 {/* Left Content */}
