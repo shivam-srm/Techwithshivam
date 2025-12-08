@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --font-inter: 'Inter', sans-serif;
+    --font-outfit: 'Outfit', sans-serif;
+}
+
+body {
+    color: theme('colors.foreground');
+    background: theme('colors.background');
+    font-family: var(--font-inter);
+    overflow-x: hidden;
+}
+
+/* Custom Cursor */
+.cursor-dot {
+    @apply fixed w-2 h-2 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference -translate-x-1/2 -translate-y-1/2;
+}
+
+.cursor-outline {
+    @apply fixed w-10 h-10 border border-white rounded-full pointer-events-none z-[9998] mix-blend-difference transition-all duration-200 -translate-x-1/2 -translate-y-1/2;
+}
+
+/* Utilities */
+.glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/5 rounded-xl;
+}
+
+.text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-secondary;
+}
