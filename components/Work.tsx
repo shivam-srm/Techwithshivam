@@ -135,7 +135,7 @@ function HolographicCard({ project, index }: { project: typeof projects[0], inde
                     </div>
 
                     <div className="space-y-4">
-                        <h3 className="text-4xl font-bold font-heading text-white uppercase leading-none" style={{ textShadow: "0 0 20px rgba(0,0,0,0.5)" }}>
+                        <h3 className="text-2xl sm:text-4xl font-bold font-heading text-white uppercase leading-none" style={{ textShadow: "0 0 20px rgba(0,0,0,0.5)" }}>
                             {project.title}
                         </h3>
                         <p className="text-white/70 line-clamp-3 text-sm font-light leading-relaxed">

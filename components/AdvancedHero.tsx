@@ -96,14 +96,14 @@ export default function AdvancedHero() {
                         <span className="text-purple-400 font-bold tracking-[0.2em] text-sm uppercase mb-4 block h-6">
                             <TypewriterText text="designer, drone pilot, & part-time bug killer." delay={0.5} />
                         </span>
-                        <h1 className="text-6xl md:text-8xl font-black uppercase leading-[0.9]">
+                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase leading-[0.9]">
                             <span className="text-white block overflow-hidden">
                                 <GlitterText text="Creative" />
                             </span>
                             {/* Outlined Text Effect */}
                             <span
                                 className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500"
-                                style={{ WebkitTextStroke: "2px rgba(255,255,255,0.2)" }}
+                                style={{ WebkitTextStroke: "1px rgba(255,255,255,0.2)" }}
                             >
                                 <motion.span
                                     initial={{ opacity: 0, scale: 0.8 }}
@@ -198,7 +198,7 @@ function ThreeDImage() {
             {/* The Purple Circle - Background Layer */}
             <motion.div
                 style={{ translateZ: -50 }}
-                className="w-72 h-72 md:w-[500px] md:h-[500px] rounded-full bg-[#8b5cf6] flex items-center justify-center relative shadow-2xl shadow-purple-900/50"
+                className="w-64 h-64 sm:w-80 sm:h-80 md:w-[500px] md:h-[500px] rounded-full bg-[#8b5cf6] flex items-center justify-center relative shadow-2xl shadow-purple-900/50"
             >
                 <div className="absolute inset-0 rounded-full overflow-hidden">
                     <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1614726365723-49cfae96c694?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-50" />
@@ -211,7 +211,7 @@ function ThreeDImage() {
                     className="relative z-10"
                     style={{ translateZ: 50 }}
                 >
-                    <div className="relative w-80 h-80 md:w-[55rem] md:h-[55rem] mx-auto md:-mr-32 md:right-16 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[55rem] md:h-[55rem] mx-auto md:-mr-32 md:right-16 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                         <Image
                             src="/shivam1.png"
                             alt="Shivam"

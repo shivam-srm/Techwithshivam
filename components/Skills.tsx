@@ -108,7 +108,7 @@ export default function Skills() {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1 }}
                         >
-                            <h2 className="text-6xl md:text-8xl font-bold font-heading text-white uppercase tracking-tighter leading-none mb-6">
+                            <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold font-heading text-white uppercase tracking-tighter leading-none mb-6">
                                 Tech <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Cosmos</span>
                             </h2>
@@ -122,7 +122,7 @@ export default function Skills() {
                     {/* Right Column: 3D Galaxy */}
                     <div
                         ref={containerRef}
-                        className="lg:col-span-8 relative w-full h-[800px] flex items-center justify-center cursor-move"
+                        className="lg:col-span-8 relative w-full h-[400px] sm:h-[600px] md:h-[800px] flex items-center justify-center cursor-move"
                         onMouseDown={handleMouseDown}
                         onMouseMove={handleMouseMove}
                         onMouseUp={handleMouseUp}

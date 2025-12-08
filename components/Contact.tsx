@@ -16,7 +16,7 @@ export default function Contact() {
 
                 {/* Main Heading with Interactive Hover */}
                 <div className="mb-8 relative group cursor-default">
-                    <div className="text-4xl md:text-6xl lg:text-8xl font-bold font-heading uppercase leading-[0.9] tracking-tighter">
+                    <div className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold font-heading uppercase leading-[0.9] tracking-tighter">
                         {/* Let's Create - White text that dims on hover */}
                         <div className="block text-white group-hover:text-white/10 transition-colors duration-500">
                             <WaveText text="Let's Create" />
