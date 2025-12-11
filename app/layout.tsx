@@ -7,6 +7,7 @@ import MagneticField from '@/components/MagneticField';
 import GeometricTrail from '@/components/GeometricTrail';
 import ModernGradientBackground from '@/components/ModernGradientBackground';
 import Preloader from '@/components/Preloader';
+import Chatbot from '@/components/Chatbot';
 import { ReactLenis } from '@studio-freight/react-lenis';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -34,6 +35,7 @@ export default function RootLayout({
                 <FloatingOrbs />
                 <GeometricTrail />
                 <Preloader />
+                <Chatbot />
                 <Navbar />
                 {children}
                 {/* </ReactLenis> */}
