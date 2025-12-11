@@ -16,17 +16,17 @@ export default function Contact() {
 
                 {/* Main Heading with Interactive Hover */}
                 <div className="mb-8 relative group cursor-default">
-                    <div className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold font-heading uppercase leading-[0.9] tracking-tighter">
+                    <div className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold font-outfit uppercase leading-[0.9] tracking-tighter">
                         {/* Let's Create - White text that dims on hover */}
                         <div className="block text-white group-hover:text-white/10 transition-colors duration-500">
                             <WaveText text="Let's Create" />
                         </div>
 
                         {/* Something - Gradient Text */}
-                        <div className="block transition-opacity duration-500 group-hover:opacity-50">
+                        <div className="block">
                             <WaveText
                                 text="Something"
-                                className="text-transparent bg-clip-text bg-gradient-to-b from-blue-500 to-purple-500 font-bold select-none"
+                                className="gradient-text"
                                 delay={0.1}
                             />
                         </div>
@@ -35,7 +35,7 @@ export default function Contact() {
                         <div className="block">
                             <WaveText
                                 text="Extraordinary"
-                                className="text-transparent bg-clip-text bg-gradient-to-b from-blue-500 to-purple-500 font-bold select-none"
+                                className="gradient-text"
                                 delay={0.2}
                             />
                         </div>
@@ -115,6 +115,7 @@ export default function Contact() {
 
 function WaveText({ text, className = "", delay = 0 }: { text: string, className?: string, delay?: number }) {
     const letters = text.split("");
+    const isGradient = className.includes('gradient-text');
 
     const container = {
         hidden: { opacity: 0 },
@@ -129,21 +130,28 @@ function WaveText({ text, className = "", delay = 0 }: { text: string, className
             opacity: 1,
             y: 0,
             transition: {
-                type: "spring",
-                damping: 12,
-                stiffness: 100
+                duration: 0.8,
+                ease: [0.2, 0.65, 0.3, 0.9],
             }
         },
         hidden: {
             opacity: 0,
-            y: 50,
+            y: 30,
             transition: {
-                type: "spring",
-                damping: 12,
-                stiffness: 100
+                duration: 0.8,
+                ease: [0.2, 0.65, 0.3, 0.9]
             }
         }
     };
+
+    const gradientStyle = isGradient ? {
+        background: 'linear-gradient(90deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+        fontWeight: 'bold',
+        userSelect: 'none' as const,
+    } : {};
 
     return (
         <motion.div
@@ -151,10 +159,16 @@ function WaveText({ text, className = "", delay = 0 }: { text: string, className
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className={`inline-flex flex-wrap justify-center gap-x-[0.2em] ${className}`} // Added gap and flex-wrap
+            className="cursor-default inline-block"
+            style={gradientStyle}
         >
             {letters.map((letter, index) => (
-                <motion.span variants={child} key={index} className={letter === " " ? "w-4" : ""}>
+                <motion.span
+                    variants={child}
+                    key={index}
+                    className="inline-block"
+                    style={{ whiteSpace: "pre" }}
+                >
                     {letter}
                 </motion.span>
             ))}

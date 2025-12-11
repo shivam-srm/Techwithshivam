@@ -8,11 +8,11 @@ import { useRef } from "react";
 const projects = [
     {
         id: 1,
-        title: "NEON HORIZONS",
-        category: "IMMERSIVE WEB EXPERIENCE",
-        description: "A futuristic landing page featuring WebGL experiments, interactive heavy particles, and gravity-defying physics.",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
-        tags: ["React", "Three.js", "WebGL", "GSAP"],
+        title: " Bloemed Pharmaceuticals",
+        category: "PHARMACEUTICALS",
+        description: "Indian pharmaceutical company (established in 2021) based in Ahmedabad, Gujarat ",
+        image: "shivam5.png",
+        tags: ["HTML5", "CSS3", "JavaScript"],
         color: "#00f3ff"
     },
     {
@@ -26,11 +26,11 @@ const projects = [
     },
     {
         id: 3,
-        title: "QUANTUM DASH",
-        category: "SAAS ANALYTICS",
-        description: "High-frequency data visualization dashboard processing millions of events in real-time with zero latency.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-        tags: ["Vue", "D3.js", "Node.js", "Redis"],
+        title: "AeroTrace-Radar",
+        category: "Real-Time Sensing and Actuation",
+        description: "a constrained embedded sensing architecture that synthesizes acoustic ranging, angular actuation, and multimodal alert channels into a unified spatial-perception system.",
+        image: "shivam3.jpg",
+        tags: ["Arduino", "ultrasonic sensor", "visual/audio alerts.", "servo sweep"],
         color: "#aa00ff"
     },
     {
@@ -38,8 +38,8 @@ const projects = [
         title: "AERO VISION",
         category: "DRONE TELEMETRY",
         description: "Advanced flight control interface for autonomous drones, featuring mapping, waypoint navigation and live video feed.",
-        image: "https://images.unsplash.com/photo-1506947411487-a56738267384?q=80&w=2033&auto=format&fit=crop",
-        tags: ["TypeScript", "WebSockets", "Mapbox", "ROS"],
+        image: "shivam4.jpg",
+        tags: ["pixhawk 2.4.8", "SKYDROID T10 2.4Ghz ", "fpv goggles"],
         color: "#00ff66"
     }
 ];
