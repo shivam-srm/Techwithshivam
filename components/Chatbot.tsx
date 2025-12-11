@@ -46,7 +46,7 @@ const Chatbot = () => {
         }
     }, [isOpen]);
 
-    const handleSendMessage = async (text: string = inputValue) => {
+    const handleSendMessage = (text: string = inputValue) => {
         if (!text.trim()) return;
 
         // User Message
@@ -55,39 +55,85 @@ const Chatbot = () => {
         setInputValue("");
         setIsTyping(true);
 
-        try {
-            const response = await fetch('/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    messages: [
-                        ...messages.map(m => ({ role: m.sender === 'bot' ? 'assistant' : 'user', content: m.text })),
-                        { role: 'user', content: text }
-                    ]
-                }),
-            });
-
-            if (!response.ok) throw new Error('Failed to get response');
-
-            const data = await response.json();
-
-            const tempBotMsg: Message = { id: Date.now() + 1, text: data.content, sender: 'bot' };
+        // Simulated Bot Response
+        setTimeout(() => {
+            const botResponse = getBotResponse(text);
+            const tempBotMsg: Message = { id: Date.now() + 1, text: botResponse, sender: 'bot' };
             setMessages(prev => [...prev, tempBotMsg]);
-        } catch (error) {
-            console.error(error);
-            const errorMsg: Message = {
-                id: Date.now() + 1,
-                text: "I seem to be having trouble connecting to the mothership. 📡 Please try again later.",
-                sender: 'bot'
-            };
-            setMessages(prev => [...prev, errorMsg]);
-        } finally {
             setIsTyping(false);
-        }
+        }, 1500); // Longer delay for "thinking" feel
     };
 
-    // Legacy local response removed in favor of AI API
-    const getBotResponse = (input: string): string => { return ""; };
+    const getBotResponse = (input: string): string => {
+        const lowerInput = input.toLowerCase();
+
+        // Greetings
+        if (lowerInput.includes("hello") || lowerInput.includes("hi") || lowerInput.includes("hey"))
+            return "Greetings, space traveler! 🌌 Ready to explore?";
+
+        // About / Identity
+        if (lowerInput.includes("who are you") || lowerInput.includes("what are you"))
+            return "I am Odin, a virtual co-pilot assigned to guide you through Shivam's portfolio. 🛡️";
+        if (lowerInput.includes("who is shivam") || lowerInput.includes("about shivam"))
+            return "Shivam is a visionary developer who blends code with creativity. He specializes in building immersive 3D web experiences using Next.js and WebGL.";
+
+        // Skills & Tech
+        if (lowerInput.includes("skills") || lowerInput.includes("stack") || lowerInput.includes("technologies"))
+            return "Shivam's tech arsenal is vast! 🛠️ Core: React, Next.js, TypeScript. \nStyling: Tailwind CSS, Framer Motion. \n3D: Three.js, React Three Fiber. \nBackend: Node.js, Vercel.";
+        if (lowerInput.includes("react") || lowerInput.includes("next"))
+            return "React and Next.js are his bread and butter! He uses them to build lightning-fast, SEO-friendly apps (like this one).";
+        if (lowerInput.includes("three") || lowerInput.includes("3d"))
+            return "He loves the third dimension! Using Three.js and R3F to bring websites to life is his specialty.";
+
+        // Experience & Availability
+        if (lowerInput.includes("experience") || lowerInput.includes("history"))
+            return "He has built numerous premium websites, ranging from e-commerce platforms to interactive portfolios. Check the 'Work' section for concrete examples! 🏆";
+        if (lowerInput.includes("hire") || lowerInput.includes("available") || lowerInput.includes("freelance"))
+            return "Yes! Shivam is currently open to new opportunities and freelance missions. 🚀 Contact him to discuss your project.";
+
+        // Contact & Socials
+        if (lowerInput.includes("contact") || lowerInput.includes("email") || lowerInput.includes("reach"))
+            return "Transmitting coordinates... 📡 \n📧 Email: shivamrai83170@gmail.com \n📸 Instagram: @shivam.raiii \n💼 LinkedIn: Shivam Rai \n💻 GitHub: shivam-srm \n\nOr use the contact form at the bottom!";
+
+        if (lowerInput.includes("github") || lowerInput.includes("linkedin") || lowerInput.includes("instagram") || lowerInput.includes("social"))
+            return "You can find him across the galaxy: \n📸 Instagram: instagram.com/shivam.raiii \n💼 LinkedIn: linkedin.com/in/shivam-rai-a32b69252 \n💻 GitHub: github.com/shivam-srm";
+
+        // Navigation
+        if (lowerInput.includes("project") || lowerInput.includes("work") || lowerInput.includes("portfolio"))
+            return "Engaging warp drive to 'Work' section! 🛸 (Scroll down to see the magic).";
+
+        // Interactive Fun Mode 
+        if (lowerInput.includes("joke")) {
+            const jokes = [
+                "Why do Java developers wear glasses? Because they don't C#! 🤓",
+                "Why did the developer go broke? Because he used up all his cache! 💸",
+                "Why did the functions stop calling each other? Because they had constant arguments. 😡",
+                "What is a programmer's favorite hangout place? Foo Bar. 🍻",
+                "Why do programmers prefer dark mode? Because light attracts bugs! 🐛",
+                "A SQL query walks into a bar, walks up to two tables and asks... 'Can I join you?' 😆"
+            ];
+            return jokes[Math.floor(Math.random() * jokes.length)];
+        }
+
+        if (lowerInput.includes("magic"))
+            return "✨ abracadabra! ✨ \n(Did you know? This entire website is rendered in real-time. That's the real magic!)";
+
+        if (lowerInput.includes("quote") || lowerInput.includes("inspire")) {
+            const quotes = [
+                "\"The only way to do great work is to love what you do.\" - Steve Jobs",
+                "\"Code is like humor. When you have to explain it, it’s bad.\" - Cory House",
+                "\"First, solve the problem. Then, write the code.\" - John Johnson",
+                "\"Simplicity is the soul of efficiency.\" - Austin Freeman"
+            ];
+            return quotes[Math.floor(Math.random() * quotes.length)];
+        }
+
+        if (lowerInput.includes("meaning of life"))
+            return "42. And clean code. 🌱";
+
+        // Fallback
+        return "I'm still calibrating my sensors on that topic. 🤖 Try asking about 'Skills', 'Projects', 'Contact', or say 'Tell me a joke'!";
+    };
 
     const suggestedQuestions = ["Skills?", "Hire Shivam?", "Tell me a joke", "Contact info"];
 
