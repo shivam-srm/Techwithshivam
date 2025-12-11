@@ -14,8 +14,13 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
 export const metadata: Metadata = {
-    title: 'TechWithShivi | Premium Portfolio',
+    title: 'Shivam | TechwithShivu.',
     description: 'Digital Experience Designer & Developer',
+    icons: {
+        icon: '/shivam1.png',
+        shortcut: '/shivam1.png',
+        apple: '/shivam1.png',
+    }
 };
 
 export default function RootLayout({

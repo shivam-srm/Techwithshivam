@@ -94,7 +94,7 @@ export default function AdvancedHero() {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-purple-400 font-bold tracking-[0.2em] text-sm uppercase mb-4 block h-6">
-                            <TypewriterText text="designer, drone pilot, & part-time bug killer." delay={0.5} />
+                            <TypewriterText text="designer, drone engineer, & part-time bug killer." delay={0.5} />
                         </span>
                         <h1 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase leading-[0.9]">
                             <span className="text-white block overflow-hidden">
